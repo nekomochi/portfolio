@@ -9,6 +9,10 @@ import Page from './Page';
 import NameForm from './NameForm';
 import EssayForm from './EssayForm';
 import FlavorForm from './FlavorForm';
+import Reservation from './Reservation';
+import Calculator from './Calculator';
+import TemperatureInput from './TemperatureInput';
+import SignUpDialog from './SignUpDialog';
 
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
@@ -158,7 +162,52 @@ const posts = [
   {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
   {id: 2, title: 'Installation', content: 'You can install React from npm.'}
 ];
+function FancyBorder(props) {
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  );
+}
+function Dialog(props) {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        {props.title}
+      </h1>
+      <p className="Dialog-message">
+        {props.message}
+      </p>
+    </FancyBorder>
+  );
+}
+function WelcomeDialog() {
+  return (
+    <Dialog 
+      title="Welcome"
+      message="Thank you for visiting our spacecraft!" />
+  );
+}
 
+function Contacts() {
+  return <div className="Contacts" />;
+}
+
+function Chat() {
+  return <div className="Chat" />;
+}
+function SplitPane(props) {
+  return (
+    <div className="SplitPane">
+      <div className="SplitPane-left">
+        {props.left}
+      </div>
+      <div className="SplitPane-right">
+        {props.right}
+      </div>
+    </div>
+  );
+}
 function App() {
   return (
     
@@ -188,6 +237,19 @@ function App() {
         <NameForm />
         <EssayForm />
         <FlavorForm />
+        <Reservation />
+        <Calculator />
+        <WelcomeDialog />
+        <div style={{height: '200px', width: '100%'}}>
+          <SplitPane
+            left={
+              <Contacts />
+            }
+            right={
+              <Chat />
+            } />
+        </div>
+        <SignUpDialog />
         <p>
           Hello <code>world</code> .
         </p>
