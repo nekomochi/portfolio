@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/bootstrap";
+
+/* make the customizations */
+$theme-colors: (
+    "info": tomato,
+    "danger": teal
+);
+
+.colour-row {
+	.row>.col, .row>[class^="col-"] {
+		background-color: #bbeffd;
+		border: 1px solid #61dafb;
+		padding: .75rem 0;
+	}
+}
+.home-margin {
+	margin: 0 54px;
+}
+.home-top {
+	display: table-cell;
+	vertical-align: bottom;
+	// height: set to gallery height
+	img {
+		vertical-align: bottom;
+	}
+}
+#photos {
+	// max-width: 800px;
+}

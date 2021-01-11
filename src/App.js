@@ -1,18 +1,20 @@
 import logo from './logo.svg';
 import './App.scss';
 // 
-import Clock from './Clock';
-import Toggle from './Toggle';
-import LoggingButton from './LoggingButton';
-import LoginControl from './LoginControl';
-import Page from './Page';
-import NameForm from './NameForm';
-import EssayForm from './EssayForm';
-import FlavorForm from './FlavorForm';
-import Reservation from './Reservation';
-import Calculator from './Calculator';
-import TemperatureInput from './TemperatureInput';
-import SignUpDialog from './SignUpDialog';
+import Clock from './practice/Clock';
+import Toggle from './practice/Toggle';
+import LoggingButton from './practice/LoggingButton';
+import LoginControl from './practice/LoginControl';
+import Page from './practice/Page';
+import NameForm from './practice/NameForm';
+import EssayForm from './practice/EssayForm';
+import FlavorForm from './practice/FlavorForm';
+import Reservation from './practice/Reservation';
+import Calculator from './practice/Calculator';
+import TemperatureInput from './practice/TemperatureInput';
+import SignUpDialog from './practice/SignUpDialog';
+
+import Home from './components/Home';
 
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
@@ -263,6 +265,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Home />
     </div>
   );
 }
