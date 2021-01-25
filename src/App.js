@@ -215,55 +215,8 @@ function App() {
     
     <div className="App">
      
-      <header className="App-header">
-        <div>
-          <Welcome name="Sara" />
-          <Welcome name="Cahal" />
-          <Welcome name="Edite" />
-        </div>
-        <Clock />
-        <Toggle />
-        <LoggingButton />
-        <Greeting isLoggedIn = {false} />
-        <LoginControl />
-        <Mailbox unreadMessages={messages} />
-        <Page />
-        <NumberList numbers={numbers} />
-        <Blog posts={posts} />
-        <Comment 
-          date={comment.date}
-          text={comment.text}
-          author={comment.author}
-        />
-        <img src={logo} className="App-logo" alt="logo" />
-        <NameForm />
-        <EssayForm />
-        <FlavorForm />
-        <Reservation />
-        <Calculator />
-        <WelcomeDialog />
-        <div style={{height: '200px', width: '100%'}}>
-          <SplitPane
-            left={
-              <Contacts />
-            }
-            right={
-              <Chat />
-            } />
-        </div>
-        <SignUpDialog />
-        <p>
-          Hello <code>world</code> .
-        </p>
-        <ActionLink />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        
       </header>
       <Home />
     </div>

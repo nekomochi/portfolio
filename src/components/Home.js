@@ -1,4 +1,5 @@
 import React from 'react';
+import Anime from 'react-anime';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { render } from "react-dom";
 import Gallery from "react-photo-gallery";
@@ -8,6 +9,21 @@ import logoAD from '../logo_ad.svg';
 /* popout the browser and maximize to see more rows! -> */
 const BasicRows = () => <Gallery photos={photos} />;
 
+const titleVar = ["Art/Design", ""];
+
+const AnimeText = (props) => <Anime {...animeProps}>{props.title}</Anime>;
+let animeProps = {
+	translateY: {
+		value: [-100, 0],
+		duration: 1200
+	},
+	opacity:{
+		value: [0, 1],
+		delay: 400
+	},
+	innerHTML: ["Art/Design", "Art/Development", "Artificial/Design"],
+	easing: 'easeInOutExpo'
+};
 function Home(){
 	return (
 		<Container className="colour-row" fluid>
@@ -25,8 +41,11 @@ function Home(){
 				</Row>
 				<Row>
 					<Col lg={5} className="text-left">
-						<h2>Perceive what you see.</h2>
-						<p>I believe that design starts with a thought. A thought for people, a thought for the World, et cetera. When I start thinking for others, what could I start and achieve, a passionate spark illuminates in me.</p>
+						<h2>Percieve what you see.</h2>
+						<AnimeText title="abc testing"></AnimeText>
+						<p>I believe that design starts with a thought. A thought for people, a thought for the World, et cetera. When I start thinking for others, what could I start and achieve, a passionate spark illuminates in me.
+						I am passionate about developing and designing interactive websites with the focus on business goals and user experience. I strive in analyzing and troubleshooting code, accumulating knowledge as I progress. Dynamic and modular aspects in design and code is what inspires my journey.
+						</p>
 						<a href="#">Download Resume</a>
 					</Col>
 					<Col lg={7}>
