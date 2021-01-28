@@ -27,17 +27,64 @@ const titleVar = ["Art/Design", ""];
 // 	easing: 'easeInOutExpo'
 // };
 class Home extends React.Component {
+	constructor(props) {
+		super(props);
+		this.myRef = React.createRef();
+		this.word1 = React.createRef();
 
-	myRef = React.createRef();
+		this.word2 = React.createRef();
+
+		this.word3 = React.createRef();
+
+		this.word4 = React.createRef();
+	}
+	
 
 	componentDidMount() {
-		let basicTimeline = Anime.timeline();
+		let basicTimeline = Anime.timeline({
+			easing: "easeInOutExpo",
+			// delay: function(el, i) { return i * 2000 },
+			// duration: 1500,
+			// direction: 'alternate',
+			// loop: true
+		});
+		// let textAnimate = Anime({
+		// 	targets: ".loader-animation",
+		// 	translateY: [
+		// 		{value: -50, delay:2000},
+		// 		{value: 0, delay: 200}
+		// 	],
+		// 	opacity: [
+		// 		{value: 0, delay:2000},
+		// 		{value: 1, delay:200}
+		// 	],
+		// 	easing: "easeInOutExpo",
+		// 	loop: true
+		// });
+
 		basicTimeline
 			.add({
-				targets: this.myRef.current,
-				translateY: ["-2em", 0],
-				duration: 500,
-				easing: "easeInOutExpo"
+				targets: this.word1.current,
+				translateY: [
+					{value: -50, delay:2000},
+					{value: 0, delay: 200},
+					{value: 50, delay: 2000}
+				],
+				opacity: [
+					{value: 0, delay:2000},
+					{value: 1, delay:200},
+					{value: 0, delay:2000}
+				],
+				begin: function() {
+					// document.querySelector(this.word1).style.display = 'block';
+				},
+			})
+			.add({
+				targets: this.word2.current,
+				opacity: [
+					{value: 0, delay:2000},
+					{value: 1, delay:200}
+				]
 			});
 	}
 
@@ -73,8 +120,16 @@ class Home extends React.Component {
 					<Row>
 						<Col lg={5} className="text-left">
 							<h2>Percieve what you see.</h2>
-							<div ref={this.myRef}>
-							hello
+							<div className="slidingVertical">
+								<div className="leftEl">
+									<span ref={this.word1} className="loader-animation">Art</span>
+									<span ref={this.word2} className="">Artificial</span>
+								</div>
+								<div>/</div>
+								<div className="rightEl">
+									<span ref={this.word3} className="loader-animation">Design</span>
+									<span ref={this.word4} className="">Development</span>
+								</div>
 							</div>
 							<p>I believe that design starts with a thought. A thought for people, a thought for the World, et cetera. When I start thinking for others, what could I start and achieve, a passionate spark illuminates in me.
 							I am passionate about developing and designing interactive websites with the focus on business goals and user experience. I strive in analyzing and troubleshooting code, accumulating knowledge as I progress. Dynamic and modular aspects in design and code is what inspires my journey.

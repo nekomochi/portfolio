@@ -33,3 +33,23 @@ $theme-colors: (
 #photos {
 	// max-width: 800px;
 }
+.slidingVertical {
+	display: block;
+	position: relative;
+	// text-indent: 8px;
+	div {
+		display: inline;
+	}
+	.leftEl {
+		// float: left;
+	}
+	.rightEl {
+		// float: right;
+	}
+	span {
+		opacity: 0;
+	// 	overflow: hidden;
+		display: none;
+		// position: absolute;
+	}
+}
